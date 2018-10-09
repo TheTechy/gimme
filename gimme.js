@@ -15,7 +15,6 @@
     ** Example Usage **
     let requestOptions = {
         url: 'https://www.httpbin.org/absolute-redirect/8',
-        // url: 'https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash',
         method: 'post',
         contentType: 'form',
         body: {
@@ -41,13 +40,6 @@
 
 const url = require('url');
 const querystring = require('querystring');
-
-function MyError(message) {
-    this.name = 'MyError';
-    this.message = message || 'Error:';
-    this.stack = (new Error()).stack;
-}
-
 const request = function(requestOptions) {
     //** Validate request options properties and set defaults
     typeof requestOptions.url === "undefined" || requestOptions.url === null ? requestOptions.url = null : requestOptions.url = requestOptions.url;
